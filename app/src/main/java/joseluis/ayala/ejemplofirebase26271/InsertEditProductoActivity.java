@@ -1,5 +1,6 @@
 package joseluis.ayala.ejemplofirebase26271;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
@@ -23,12 +24,26 @@ public class InsertEditProductoActivity extends AppCompatActivity {
     private Button btnGuardar;
     private DatabaseReference dbProductos;
     private boolean esEdicion = false;
+    private FirebaseAuth mAuth;
 
+    protected void onStart() {
+        super.onStart();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser == null) {
+            // Redirigir al Login y cerrar esta pantalla para evitar que vuelva con 'Atrás'
+            Intent intent = new Intent(InsertEditProductoActivity.this, LogueoEmail.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_edit_producto);
-
+        mAuth = FirebaseAuth.getInstance();
         etCodigo = findViewById(R.id.etCodigoProducto);
         etNombre = findViewById(R.id.etNombreProducto);
         etPrecio = findViewById(R.id.etPrecioProducto);

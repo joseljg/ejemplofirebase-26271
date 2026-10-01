@@ -34,12 +34,27 @@ public class CrudProductos extends AppCompatActivity {
     private final List<Producto> listaCompleta = new ArrayList<>();
     private final List<Producto> lista = new ArrayList<>();
     private ProductoAdapter adapter;
+    private FirebaseAuth mAuth;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        if (currentUser == null) {
+            // Redirigir al Login y cerrar esta pantalla para evitar que vuelva con 'Atrás'
+            Intent intent = new Intent(CrudProductos.this, LogueoEmail.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_productos);
-
+        mAuth = FirebaseAuth.getInstance();
         etBuscar = findViewById(R.id.etBuscarProducto);
         btnBuscar = findViewById(R.id.btnBuscarProducto);
         btnInsertar = findViewById(R.id.btnInsertarProducto);
