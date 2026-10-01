@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "540934952712",
+    "project_id": "ejemplofirebase-26-27-1",
+    "storage_bucket": "ejemplofirebase-26-27-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540934952712:android:2e61406aaa8f2601a6bebd",
+        "android_client_info": {
+          "package_name": "joseluis.ayala.ejemplofirebase26271"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540934952712-e0l7kcajnpuicmcsgl5j7fhvs74j4nqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVygWpZhf5FlH81C8PVb4OcDkGeaH4CLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540934952712-e0l7kcajnpuicmcsgl5j7fhvs74j4nqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
