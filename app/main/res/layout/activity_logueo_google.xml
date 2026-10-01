@@ -5,50 +5,51 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    tools:context=".MainActivity">
+    tools:context=".LogueoGoogle">
 
     <TextView
-        android:id="@+id/txtTituloMain"
+        android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Página principal"
-        android:textSize="28sp"
+        android:layout_marginTop="100dp"
+        android:text="Inicio de Sesión con Google"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtHolaMain"
-        android:layout_width="0dp"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogleSignIn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:text="Bienvenido"
-        android:textSize="20sp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloMain" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
     <Button
-        android:id="@+id/btnProductos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Gestionar productos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtHolaMain" />
-
-    <Button
-        android:id="@+id/btnCerrarSesionMain"
+        android:id="@+id/btnCerrarSesionGoogle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Cerrar sesión"
+        android:text="Cerrar Sesión"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnProductos" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGoogleSignIn" />
+
+    <TextView
+        android:id="@+id/txtEstadoGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:text="No logueado"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCerrarSesionGoogle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

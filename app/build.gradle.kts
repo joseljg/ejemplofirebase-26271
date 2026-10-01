@@ -62,4 +62,5 @@ dependencies {
     // See https://firebase.google.com/docs/android/setup#available-libraries
     // For example, add the dependencies for Firebase Authentication and Cloud Firestore
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
