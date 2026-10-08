@@ -63,4 +63,7 @@ dependencies {
     // For example, add the dependencies for Firebase Authentication and Cloud Firestore
     implementation("com.google.firebase:firebase-auth")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    // --- ROOM DATABASE (para Java) ---
+    implementation ("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
 }

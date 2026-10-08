@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
+import joseluis.ayala.ejemplofirebase26271.clases.AppDatabase;
 import joseluis.ayala.ejemplofirebase26271.clases.Producto;
 import com.bumptech.glide.Glide;
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHolder> {
@@ -67,11 +68,16 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
         holder.btnEliminar.setOnClickListener(v ->
                 new AlertDialog.Builder(v.getContext())
                         .setTitle("Eliminar producto")
-                        .setMessage("¿Seguro que quieres borrar '"
-                                + producto.getNombre() + "'?")
+                        .setMessage("¿Seguro que quieres borrar '" + producto.getNombre() + "'?")
                         .setPositiveButton("Sí", (dialog, which) -> {
                             if (dbProductos != null) {
-                                dbProductos.child(producto.getCodigo()).removeValue();
+                                dbProductos.child(producto.getCodigo()).removeValue()
+                                        .addOnSuccessListener(unused -> {
+                                            // Borrar de la base de datos Room
+                                            AppDatabase.getInstance(v.getContext())
+                                                    .productoDao()
+                                                    .delete(producto);
+                                        });
                             }
                         })
                         .setNegativeButton("No", null)

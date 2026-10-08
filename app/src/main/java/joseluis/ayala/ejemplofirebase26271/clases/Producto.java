@@ -1,34 +1,38 @@
 package joseluis.ayala.ejemplofirebase26271.clases;
+
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Producto almacenado en Firebase Realtime Database.
- * El código se utiliza como identificador dentro de la colección del usuario.
- */
+@Entity(tableName = "productos")
 public class Producto implements Serializable {
 
+    @PrimaryKey
+    @NonNull
     private String codigo;
     private String nombre;
     private double precio;
     private String foto;
 
-    // Constructor vacío necesario para Firebase.
     public Producto() {
     }
 
-    public Producto(String codigo, String nombre, double precio, String foto) {
+    public Producto(@NonNull String codigo, String nombre, double precio, String foto) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
         this.foto = foto;
     }
 
+    @NonNull
     public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(@NonNull String codigo) {
         this.codigo = codigo;
     }
 

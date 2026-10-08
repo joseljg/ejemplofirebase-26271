@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import joseluis.ayala.ejemplofirebase26271.clases.AppDatabase;
 import joseluis.ayala.ejemplofirebase26271.clases.Producto;
 
 public class CrudProductos extends AppCompatActivity {
@@ -84,6 +85,8 @@ public class CrudProductos extends AppCompatActivity {
     }
 
     private void cargarProductos() {
+        AppDatabase roomDb = AppDatabase.getInstance(this);
+
         dbProductos.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -96,6 +99,10 @@ public class CrudProductos extends AppCompatActivity {
                     }
                 }
 
+                // Guardar en Room la copia local actualizada
+                roomDb.productoDao().deleteAll();
+                roomDb.productoDao().insertAll(listaCompleta);
+
                 lista.clear();
                 lista.addAll(listaCompleta);
                 adapter.notifyDataSetChanged();
@@ -103,9 +110,17 @@ public class CrudProductos extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // Si la conexión falla, se cargan los productos desde Room
+                listaCompleta.clear();
+                listaCompleta.addAll(roomDb.productoDao().getAll());
+
+                lista.clear();
+                lista.addAll(listaCompleta);
+                adapter.notifyDataSetChanged();
+
                 Toast.makeText(CrudProductos.this,
-                        "No se pudieron cargar los productos: " + error.getMessage(),
-                        Toast.LENGTH_LONG).show();
+                        "Cargados datos en modo offline desde la base de datos local",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }

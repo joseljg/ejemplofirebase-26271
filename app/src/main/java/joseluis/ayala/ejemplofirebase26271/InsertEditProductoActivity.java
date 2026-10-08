@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
 
+import joseluis.ayala.ejemplofirebase26271.clases.AppDatabase;
 import joseluis.ayala.ejemplofirebase26271.clases.Producto;
 
 public class InsertEditProductoActivity extends AppCompatActivity {
@@ -116,6 +117,11 @@ public class InsertEditProductoActivity extends AppCompatActivity {
 
         dbProductos.child(codigo).setValue(producto)
                 .addOnSuccessListener(unused -> {
+                    // Insertar/actualizar en Room
+                    AppDatabase.getInstance(this)
+                            .productoDao()
+                            .insert(producto);
+
                     Toast.makeText(this,
                             esEdicion ? "Producto actualizado" : "Producto insertado",
                             Toast.LENGTH_SHORT).show();
