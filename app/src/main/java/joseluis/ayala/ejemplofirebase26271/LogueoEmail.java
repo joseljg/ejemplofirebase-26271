@@ -113,7 +113,7 @@ public class LogueoEmail extends AppCompatActivity {
                         updateUI(user);
                     } else {
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                        tvStatus.setText("No se pudo registrar el usuario");
+                        tvStatus.setText("No se  pudoregistrar el usuario");
                     }
                 });
     }

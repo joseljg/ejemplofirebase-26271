@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +21,7 @@ import java.util.List;
 
 import joseluis.ayala.ejemplofirebase26271.clases.AppDatabase;
 import joseluis.ayala.ejemplofirebase26271.clases.Producto;
-import com.bumptech.glide.Glide;
+
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHolder> {
 
     private final List<Producto> lista;
@@ -58,7 +59,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
                 producto.getPrecio()
         ));
 
-        // Cargar imagen desde la URL guardada en Firebase
+        // Cargar imagen desde la URL de Cloudinary usando Glide
         Glide.with(holder.ivFoto.getContext())
                 .load(producto.getFoto())
                 .placeholder(android.R.drawable.ic_menu_gallery)
@@ -73,7 +74,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
                             if (dbProductos != null) {
                                 dbProductos.child(producto.getCodigo()).removeValue()
                                         .addOnSuccessListener(unused -> {
-                                            // Borrar de la base de datos Room
+                                            // Borrar de la base de datos Room local si procede
                                             AppDatabase.getInstance(v.getContext())
                                                     .productoDao()
                                                     .delete(producto);

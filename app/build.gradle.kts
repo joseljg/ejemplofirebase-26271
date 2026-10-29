@@ -66,4 +66,5 @@ dependencies {
     // --- ROOM DATABASE (para Java) ---
     implementation ("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("com.cloudinary:cloudinary-android:3.1.2")
 }

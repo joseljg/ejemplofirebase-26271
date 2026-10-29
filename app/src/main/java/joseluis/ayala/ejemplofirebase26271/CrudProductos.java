@@ -42,19 +42,19 @@ public class CrudProductos extends AppCompatActivity {
         super.onStart();
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        mAuth = FirebaseAuth.getInstance();
         if (currentUser == null) {
-            // Redirigir al Login y cerrar esta pantalla para evitar que vuelva con 'Atrás'
             Intent intent = new Intent(CrudProductos.this, LogueoEmail.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_productos);
+
         mAuth = FirebaseAuth.getInstance();
         etBuscar = findViewById(R.id.etBuscarProducto);
         btnBuscar = findViewById(R.id.btnBuscarProducto);
@@ -65,14 +65,14 @@ public class CrudProductos extends AppCompatActivity {
         adapter = new ProductoAdapter(lista);
         recyclerView.setAdapter(adapter);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {
             Toast.makeText(this, "Debes iniciar sesión", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
 
-        // Cada usuario trabaja únicamente con sus propios productos.
+        // Nodo específico del usuario autenticado
         dbProductos = FirebaseDatabase.getInstance()
                 .getReference("productos")
                 .child(user.getUid());
@@ -81,7 +81,7 @@ public class CrudProductos extends AppCompatActivity {
 
         btnBuscar.setOnClickListener(v -> buscar());
         btnInsertar.setOnClickListener(v ->
-                startActivity(new Intent(CrudProductos.this,  InsertEditProductoActivity.class)));
+                startActivity(new Intent(CrudProductos.this, InsertEditProductoActivity.class)));
     }
 
     private void cargarProductos() {
@@ -99,7 +99,7 @@ public class CrudProductos extends AppCompatActivity {
                     }
                 }
 
-                // Guardar en Room la copia local actualizada
+                // Guardar copia local en Room
                 roomDb.productoDao().deleteAll();
                 roomDb.productoDao().insertAll(listaCompleta);
 
@@ -110,7 +110,7 @@ public class CrudProductos extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Si la conexión falla, se cargan los productos desde Room
+                // Modo offline desde Room si falla la red
                 listaCompleta.clear();
                 listaCompleta.addAll(roomDb.productoDao().getAll());
 
@@ -127,7 +127,6 @@ public class CrudProductos extends AppCompatActivity {
 
     private void buscar() {
         String texto = etBuscar.getText().toString().trim().toLowerCase();
-
         lista.clear();
 
         if (texto.isEmpty()) {
@@ -142,7 +141,6 @@ public class CrudProductos extends AppCompatActivity {
                 }
             }
         }
-
         adapter.notifyDataSetChanged();
     }
 }
