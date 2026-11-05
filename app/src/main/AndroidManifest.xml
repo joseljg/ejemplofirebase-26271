@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ejemplofirebase26271">
         <activity
+            android:name=".GeminiBusquedaActivity"
+            android:exported="false" />
+        <activity
             android:name=".InsertEditProductoActivity"
             android:exported="false" />
         <activity

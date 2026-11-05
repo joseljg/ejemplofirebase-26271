@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16px">
+
+    <EditText
+        android:id="@+id/etPromptGemini"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ej: Productos de limpieza para el hogar"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnBuscarGemini"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preguntar a Gemini" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerGeminiProductos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnAnadirSeleccionados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir Seleccionados al CRUD"
+        android:enabled="false" />
+
+</LinearLayout>

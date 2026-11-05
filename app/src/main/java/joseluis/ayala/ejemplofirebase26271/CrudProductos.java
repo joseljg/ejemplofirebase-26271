@@ -28,7 +28,7 @@ import joseluis.ayala.ejemplofirebase26271.clases.Producto;
 public class CrudProductos extends AppCompatActivity {
 
     private EditText etBuscar;
-    private Button btnBuscar, btnInsertar;
+    private Button btnBuscar, btnInsertar, btnAbrirGemini;
     private RecyclerView recyclerView;
 
     private DatabaseReference dbProductos;
@@ -80,6 +80,8 @@ public class CrudProductos extends AppCompatActivity {
         cargarProductos();
 
         btnBuscar.setOnClickListener(v -> buscar());
+        btnAbrirGemini = findViewById(R.id.btnBuscarGemini);
+        btnAbrirGemini.setOnClickListener(v ->  startActivity(new Intent(CrudProductos.this, GeminiBusquedaActivity.class)));
         btnInsertar.setOnClickListener(v ->
                 startActivity(new Intent(CrudProductos.this, InsertEditProductoActivity.class)));
     }

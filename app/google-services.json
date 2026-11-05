@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "540934952712",
+    "firebase_url": "https://ejemplofirebase-26-27-1-default-rtdb.firebaseio.com",
     "project_id": "ejemplofirebase-26-27-1",
     "storage_bucket": "ejemplofirebase-26-27-1.firebasestorage.app"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "540934952712-f7uiflfr7p3av7ead00pra3b46n1pd75.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "joseluis.ayala.ejemplofirebase26271",
+            "certificate_hash": "fd6ea50d5c9128b86a3937435b91a16faca4364c"
+          }
+        },
         {
           "client_id": "540934952712-e0l7kcajnpuicmcsgl5j7fhvs74j4nqt.apps.googleusercontent.com",
           "client_type": 3
