@@ -1,0 +1,191 @@
+﻿Diagnose log at 2026-10-08T09:31:05Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.0.886+ea93cb5158
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26200)
+Reading environment variables... OK
+ Variables:
+TMPDIR=C:\Users\josel\AppData\Local\Temp
+DriverData=C:\Windows\System32\Drivers\DriverData
+TERMINAL_EMULATOR=JetBrains-JediTerm
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+OneDrive=C:\Users\josel\OneDrive
+INTELLIJ_TERMINAL_COMMAND_BLOCKS_REWORKED=1
+HOMEPATH=\Users\josel
+SESSIONNAME=Console
+TMP=C:\Users\josel\AppData\Local\Temp
+HOME=C:\Users\josel
+PROCESSOR_REVISION=6001
+PROCESSOR_ARCHITECTURE=x86
+EFC_10176_3789132940=1
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+SystemDrive=C:
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+TEMP=C:\Users\josel\AppData\Local\Temp
+LOCALAPPDATA=C:\Users\josel\AppData\Local
+MSYSTEM=MINGW64
+TERM=xterm-256color
+COMPUTERNAME=PC_CASA1
+ProgramData=C:\ProgramData
+USERDOMAIN=PC_CASA1
+ProgramFiles(x86)=C:\Program Files (x86)
+EFC_10176_4126798990=1
+JETBRAINS_INTELLIJ_COMMAND_END_MARKER=FuWSz6AP5WvizwmsW7olSNm3ZhYOSIHVvvbHFUqQW6U9DKmROhnR9saXW4oIqGCl
+PROCESSOR_LEVEL=23
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+EFC_10176_2283032206=1
+PROCESS_LAUNCHED_BY_CW=1
+PSModulePath=C:\Users\josel\OneDrive\Documentos\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC=C:\Users\Public
+EFC_10176_1262719628=1
+PROCESS_LAUNCHED_BY_Q=1
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+EFC_10176_1592913036=1
+NUMBER_OF_PROCESSORS=16
+PLINK_PROTOCOL=ssh
+COLORTERM=truecolor
+ProgramW6432=C:\Program Files
+ProgramFiles=C:\Program Files (x86)
+SystemRoot=C:\WINDOWS
+TERM_SESSION_ID=050c33d5-b396-482a-9f8a-d94932feee9a
+LC_CTYPE=C.UTF-8
+CommonProgramW6432=C:\Program Files\Common Files
+LOGONSERVER=\\PC_CASA1
+FIG_TERM=1
+USERPROFILE=C:\Users\josel
+FPS_BROWSER_USER_PROFILE_STRING=Default
+USERDOMAIN_ROAMINGPROFILE=PC_CASA1
+APPDATA=C:\Users\josel\AppData\Roaming
+HOMEDRIVE=C:
+EFC_10176_2775293581=1
+VBOX_MSI_INSTALL_PATH=C:\Program Files\Oracle\VirtualBox\
+USERNAME=josel
+PROCESSOR_ARCHITEW6432=AMD64
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+PSExecutionPolicyPreference=Bypass
+OS=Windows_NT
+ComSpec=C:\WINDOWS\system32\cmd.exe
+Path=C:/Program Files/Git/mingw64/libexec/git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\josel\bin;C:\Program Files\Java\jdk-21\bin;C:\Program Files\Java\jdk-27\bin;C:\Program Files\Java\jdk-25\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\dotnet\;C:\Program Files (x86)\BaseX\bin;C:\Users\josel\.local\bin;C:\Users\josel\AppData\Local\Microsoft\WindowsApps;C:\Users\josel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\josel\.dotnet\tools;C:\Program Files\Java\jdk-21\bin;C:\Program Files (x86)\Nmap
+windir=C:\WINDOWS
+ALLUSERSPROFILE=C:\ProgramData
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\josel\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\josel\AppData\Local\Temp\97214db7b676c1487b41125f'... OK
+Reading from temporary file 'C:\Users\josel\AppData\Local\Temp\97214db7b676c1487b41125f'... OK
+Deleting temporary file 'C:\Users\josel\AppData\Local\Temp\97214db7b676c1487b41125f'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\josel
+UserDataDirectoryPath: C:\Users\josel\.gcm
+GetCurrentDirectory(): D:\workspace_25_26_android\ejemplofirebase26271
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:9638/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.39.1.windows.1'
+Locating current repository... OK
+Git repository at 'D:/workspace_25_26_android/ejemplofirebase26271/.git'
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=openssl
+file:C:/Program Files/Git/etc/gitconfig	http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/josel/.gitconfig	user.email=joseljg@gmail.com
+file:C:/Users/josel/.gitconfig	user.name=joseljg
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/joseljg/ejemplofirebase-26271.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.master.remote=origin
+file:.git/config	branch.master.merge=refs/heads/master
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker not supported.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\josel\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\josel\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
